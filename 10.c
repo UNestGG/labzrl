@@ -27,7 +27,7 @@ unsigned int transf_10(const char *number, int base) {
     for (int i = length - 1; i >= 0; i--) {
         char digit = number[i];
         int value = isdigit(digit) ? digit - '0' : toupper(digit) - 'A' + 10;
-        if (value >= base || value >= 10) {
+        if (value >= base) {
             return 0; // Invalid input
         }
         decimal += value * customPower(base, power++);
