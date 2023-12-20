@@ -2,7 +2,7 @@
 #include "funcs.h"
 
 int transf_16(int n) {
-    int octa;
+    int octa = 0;
     int base = 1;
     while (n != 0) {
         octa += (n % 16) * base;
