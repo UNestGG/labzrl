@@ -36,21 +36,3 @@ unsigned int transf_10(const char *number, int base) {
     return decimal;
 }
 
-/*int tran(char number, int base) {
-
-    //printf("Enter the number in binary, octal, or hexadecimal: ");
-    //scanf("%s", number);
-
-    //printf("Enter the base (2 for binary, 8 for octal, 16 for hexadecimal): ");
-    //scanf("%d", &base);
-
-    unsigned int decimal = convertToDecimal(number, base);
-
-    /*if (decimal == 0) {
-        printf("Error: Invalid input\n");
-    } else {
-        printf("The decimal value is: %u\n", decimal);
-    }
-
-    return decimal;
-}*/
