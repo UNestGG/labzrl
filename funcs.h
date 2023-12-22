@@ -4,9 +4,12 @@
 int transf_2(int n);
 int transf_8(int n);
 void transf_16(int n);
+int check8(char* n);
+int check2(char* n);
 int calc2(int a);
 int calc(char *operator1, int a,int b);
 unsigned int customPower(unsigned int base, int exponent);
 unsigned int transf_10(const char *number, int base);
+int validate_input(char *input);
 
 #endif

@@ -1,25 +1,17 @@
 CC = gcc
-Makef = program
+Makefile = program
 
-$(Makef) : main.o 2.o 8.o 10.o 16.o calculator.o
-	$(CC) main.o 2.o 8.o 10.o 16.o calculator.o -o $(Makef)
+SRC = $(wildcard *.c)
+OBJ = $(patsubst %.c, %.o, $(SRC))
 
-main.o : main.c 
-	$(CC) -c main.c -o main.o
+$(Makefile) : $(OBJ)
+	$(CC) $(OBJ) -o $(Makefile)
 
-2.o : 2.c
-	$(CC) -c 2.c -o 2.o
-8.o : 8.c
-	$(CC) -c 8.c -o 8.o
-10.o : 10.c
-	$(CC) -c 10.c -o 10.o
-16.o : 16.c
-	$(CC) -c 16.c -o 16.o
-calculator.o : calculator.c
-	$(CC) -c calculator.c -o calculator.o
+%.o : %.c
+	$(CC) -c $< -o $@
 
 clean:
-	rm $(Makef) *.o
+	rm $(Makefile) *.o
 
 run: program
 	./program

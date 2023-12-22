@@ -32,10 +32,11 @@ int main() {
     	char op[2];
     	char input2[100];
 	    
-    	printf("Ввод: ");
+    	printf("Ведите число: ");
     	scanf("%s", input1);
     	char v[2];
     	strncpy(v, input1, 1);
+	char *ptr = strrchr(input1, '~');
     	if (strcmp(v,"~") == 0)
     	{
 		strcpy(input1, input1 + 1);
@@ -68,14 +69,39 @@ int main() {
 			printf("%o (%d)\n", ot_10, ot_10);
 		}
    	}
+	else if (ptr != NULL)
+	{
+		printf("error\n");
+		return 0;
+	}
    	else
   	{
     		scanf("%s %s", op, input2);
+		if (isdigit(op[0]))
+		{
+			printf("error\n");
+			return 0;
+		}
     			if (scan(input1) == scan(input2))
 			{
 				int cc = scan(input1);
+				if (cc == 2)
+				{
+					if(check8(input1) != 2 && check8(input2) != 2)
+					{
+					printf("error\n");
+					return 0;
+					}
+
+				}
 				if (cc == 8)
 				{
+					if(check8(input1) != 8 && check8(input2) != 8)
+					{
+					printf("error\n");
+					return 0;
+					}
+
 					strcpy(input1, input1 + 1);
 					strcpy(input2, input2 + 1);
 				}
@@ -103,10 +129,10 @@ int main() {
 					printf("%d (%d)\n",ot, ot_10);
 				}
 				else if(cc == 16)
-                                {
-                                        transf_16(ot_10);
-                                        printf(" (%d)\n", ot_10);
-                                }
+				{
+					transf_16(ot_10);
+					printf(" (%d)\n", ot_10);
+				}
 
 			}
 			else
