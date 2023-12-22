@@ -1,14 +1,26 @@
 #include <stdio.h>
 #include "funcs.h"
 
-int transf_16(int n) {
-    int octa = 0;
-    int base = 1;
-    while (n != 0) {
-        octa += (n % 16) * base;
-        n = n / 16;
-        base *= 10;
-    }
-    return octa;
+void transf_16(int n) {
+    #include <stdio.h>
+#include <stdlib.h>
+#include "funcs.h"
 
+void transf_16(int n) {
+    char hex_num[100];
+    int i = 0;
+    while(n != 0) {
+        int temp = 0;
+        temp = n % 16;
+        if(temp < 10) {
+            hex_num[i] = temp + 48;
+        } else {
+            hex_num[i] = temp + 55;
+        }
+        i++;
+        n = n / 16;
+    }
+    for(int j = i - 1; j >= 0; j--) {
+        printf("%c", hex_num[j]);
+    }
 }
