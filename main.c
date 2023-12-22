@@ -104,9 +104,10 @@ int main() {
 					printf("%d (%d)\n",ot, ot_10);
 				}
 				else if(cc == 16)
-				{
-					printf("%o (%d)\n", ot_10, ot_10);
-				}
+                                {
+                                        transf_16(ot_10);
+                                        printf(" (%d)\n", ot_10);
+                                }
 
 			}
 			else
