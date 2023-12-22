@@ -1,8 +1,8 @@
 CC = gcc
-Makefile = program
+Makef = program
 
-$(Makefile) : main.o 2.o 8.o 10.o 16.o calculator.o
-	$(CC) main.o 2.o 8.o 10.o 16.o calculator.o -o $(Makefile)
+$(Makef) : main.o 2.o 8.o 10.o 16.o calculator.o
+	$(CC) main.o 2.o 8.o 10.o 16.o calculator.o -o $(Makef)
 
 main.o : main.c 
 	$(CC) -c main.c -o main.o
@@ -19,7 +19,7 @@ calculator.o : calculator.c
 	$(CC) -c calculator.c -o calculator.o
 
 clean:
-	rm $(Makefile) *.o
+	rm $(Makef) *.o
 
 run: program
 	./program
