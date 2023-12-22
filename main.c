@@ -87,7 +87,7 @@ int main() {
 				int cc = scan(input1);
 				if (cc == 2)
 				{
-					if(check2(input1) != 2 && check2(input2) != 2)
+					if(check2(input1) != 2 || check2(input2) != 2)
 					{
 					printf("error\n");
 					return 0;
@@ -96,7 +96,7 @@ int main() {
 				}
 				if (cc == 8)
 				{
-					if(check8(input1) != 8 && check8(input2) != 8)
+					if(check8(input1) != 8 || check8(input2) != 8)
 					{
 					printf("error\n");
 					return 0;
