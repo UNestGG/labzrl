@@ -5,7 +5,12 @@
 
 int check2(char* n) {
     int len = strlen(n);
-    for (int i = 0; i < len; i++) {
+    int a = 0;
+    if (n[0] == '-')
+    {
+	a = 1;
+    }
+    for (int i = a; i < len; i++) {
         if (n[i] != '0' && n[i] != '1') {
             return 0;
         }
