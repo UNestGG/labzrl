@@ -32,7 +32,7 @@ int main() {
     	char op[2];
     	char input2[100];
 	    
-    	printf("Ведите число: ");
+    	printf("Ввод: ");
     	scanf("%s", input1);
     	char v[2];
     	strncpy(v, input1, 1);
